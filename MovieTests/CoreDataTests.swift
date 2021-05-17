@@ -5,28 +5,36 @@
 //  Created by Denys Nikolaichuk on 17.05.2021.
 //
 
+import CoreData
+@testable import Movie
 import XCTest
 
-class CoreDataTests: XCTestCase {
+///
+final class CoreDataTests: XCTestCase {
+    private var coreData: CoreDataProtocol!
+    private var cinemaListModel: MoviesInfo?
+    private var cinemaModel: [ResultMovie]?
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        coreData = CoreData.shareInstance
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testCoreData() {
+        cinemaModel = [ResultMovie()]
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        let container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+        let context = container?.viewContext ?? NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
 
+        coreData?.deleteObjectsfromCoreData(context: context)
+        coreData?.saveDataToCoreData(movies: cinemaModel ?? [ResultMovie()], context: context)
+
+        XCTAssert(container != nil)
+        XCTAssert(cinemaModel?.count == 1)
+        XCTAssert(coreData?.deleteObjectsfromCoreData(context: context) != nil)
+        XCTAssert(coreData?.saveDataToCoreData(
+            movies: cinemaModel ?? [ResultMovie()],
+            context: context
+        ) != nil)
+    }
 }
