@@ -19,6 +19,7 @@
 		C2A6B0B62652B67E0037ADC0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0B52652B67E0037ADC0 /* Movie.swift */; };
 		C2A6B0B92652B93B0037ADC0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0B82652B93B0037ADC0 /* Photo.swift */; };
 		C2A6B0BD2652B9DE0037ADC0 /* ResultMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0BC2652B9DE0037ADC0 /* ResultMovie.swift */; };
+		C2A6B0C32652BE130037ADC0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0C22652BE130037ADC0 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C2A6B0B52652B67E0037ADC0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C2A6B0B82652B93B0037ADC0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C2A6B0BC2652B9DE0037ADC0 /* ResultMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMovie.swift; sourceTree = "<group>"; };
+		C2A6B0C22652BE130037ADC0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				C2A6B0822652B34E0037ADC0 /* AppDelegate.swift */,
 				C2A6B0842652B34E0037ADC0 /* SceneDelegate.swift */,
 				C2A6B0862652B34E0037ADC0 /* ViewController.swift */,
+				C2A6B0C12652BD8B0037ADC0 /* ServiceLayer */,
 				C2A6B0B72652B69F0037ADC0 /* Model */,
 				C2A6B0882652B34E0037ADC0 /* Main.storyboard */,
 				C2A6B08E2652B34F0037ADC0 /* Assets.xcassets */,
@@ -146,6 +149,14 @@
 				C2A6B08B2652B34E0037ADC0 /* Movie.xcdatamodeld */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C2A6B0C12652BD8B0037ADC0 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C2A6B0C22652BE130037ADC0 /* NetworkService.swift */,
+			);
+			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 			files = (
 				C2A6B0B92652B93B0037ADC0 /* Photo.swift in Sources */,
 				C2A6B0872652B34E0037ADC0 /* ViewController.swift in Sources */,
+				C2A6B0C32652BE130037ADC0 /* NetworkService.swift in Sources */,
 				C2A6B0832652B34E0037ADC0 /* AppDelegate.swift in Sources */,
 				C2A6B08D2652B34E0037ADC0 /* Movie.xcdatamodeld in Sources */,
 				C2A6B0852652B34E0037ADC0 /* SceneDelegate.swift in Sources */,
