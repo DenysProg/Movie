@@ -5,6 +5,7 @@
 //  Created by Denys Nikolaichuk on 17.05.2021.
 //
 
+import CoreData
 import UIKit
 
 ///
@@ -21,15 +22,23 @@ protocol MainViewModelProtocol: NSObjectProtocol {
     func object(indexPath: IndexPath) -> ResultMovie?
 }
 
-class MoviesViewModel: NSObject, MainViewModelProtocol {
+final class MoviesViewModel: NSObject, NSFetchedResultsControllerDelegate, MainViewModelProtocol {
     weak var delegate: MainViewModelDelegateProtocol?
     var networkService: NetworkServiceProtocol?
+    var coordinator: CoordinatorProtocol?
+    private var photoService: PhotoServiceProtocol?
     var model = MoviesModel(results: [])
+    private let container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    private var fetchedResultsController: NSFetchedResultsController<MovieEntity>?
 
     init(
-        networkService: NetworkServiceProtocol
+        networkService: NetworkServiceProtocol,
+        coordinator: CoordinatorProtocol,
+        photoService: PhotoServiceProtocol?
     ) {
         self.networkService = networkService
+        self.coordinator = coordinator
+        self.photoService = photoService
     }
 
     func checkData() {

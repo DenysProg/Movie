@@ -17,7 +17,15 @@ protocol AssemblerBuilderProtocol {
 final class AssemblerModuleBuilder: AssemblerBuilderProtocol {
     func createMainModule(coordinator: CoordinatorProtocol) -> UIViewController {
         let networkService = NetworkService()
-       
-
-
+        let photoServise = PhotoService()
+        let vc = MainViewController.instantiate()
+        vc.viewModel = MoviesViewModel(
+            networkService: networkService,
+            coordinator: coordinator,
+            photoService: photoServise
+        )
+        vc.viewModel?.coordinator = coordinator
+        vc.viewModel?.delegate = vc
+        return vc
+    }
 }

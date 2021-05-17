@@ -11,9 +11,11 @@ import CoreData
 import UIKit
 
 ///
-final class MainViewController: UIViewController{
+final class MainViewController: UIViewController, StoryboardedCoordinator {
 
     @IBOutlet var tableView: UITableView!
+    
+    var viewModel: MoviesViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()

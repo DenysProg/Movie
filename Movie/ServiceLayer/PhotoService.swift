@@ -64,11 +64,43 @@ final class PhotoService: PhotoServiceProtocol {
     }
     
     func loadPhoto(by urlString: String, completion: @escaping (UIImage?) -> ()) {
-        <#code#>
+        let url = imageUrlConstant + urlString
+        print(url)
+        guard let urlFromString = URL(string: url) else { return }
+        URLSession.shared.dataTask(with: urlFromString) { data, response, error in
+            print("This is \(Thread.current)")
+            guard let data = data,
+                  let image = UIImage(data: data)
+            else {
+                print("No data")
+                return
+            }
+
+            guard let response = response as? HTTPURLResponse else { return }
+            print(response.statusCode)
+
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            self.images[urlString] = image
+            self.saveImageToCatch(urlString: urlString, image: image)
+            completion(image)
+        }.resume()
     }
-    
+
     func photo(by urlString: String, completion: @escaping (UIImage?) -> ()) {
-        <#code#>
+        if let photo = images[urlString] {
+            completion(photo)
+            return
+        } else if let photo = getImageFromCache(urlString: urlString) {
+            completion(photo)
+            return
+        } else {
+            loadPhoto(by: urlString) { image in
+                completion(image)
+            }
+        }
     }
     
 }
