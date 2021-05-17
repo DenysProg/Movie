@@ -48,4 +48,20 @@ final class NetworkService: NetworkServiceProtocol {
             }
         }.resume()
     }
+
+    func getPhotoInfo(movieId: Int, completion: @escaping (PhotoInfo?, Error?) -> Void) {
+        let path = "\(url)/3/movie/\(movieId)/images?api_key=\(apiKey)"
+        guard let url = URL(string: path) else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            guard let response = response as? HTTPURLResponse else { return }
+            print(response.statusCode)
+            do {
+                let photoData = try JSONDecoder().decode(PhotoInfo.self, from: data)
+                completion(photoData, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }.resume()
+    }
 }
