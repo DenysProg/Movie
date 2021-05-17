@@ -115,7 +115,6 @@
 				C2A6B08E2652B34F0037ADC0 /* Assets.xcassets */,
 				C2A6B0902652B34F0037ADC0 /* LaunchScreen.storyboard */,
 				C2A6B0932652B34F0037ADC0 /* Info.plist */,
-				C2A6B08B2652B34E0037ADC0 /* Movie.xcdatamodeld */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -144,6 +143,7 @@
 				C2A6B0B52652B67E0037ADC0 /* Movie.swift */,
 				C2A6B0B82652B93B0037ADC0 /* Photo.swift */,
 				C2A6B0BC2652B9DE0037ADC0 /* ResultMovie.swift */,
+				C2A6B08B2652B34E0037ADC0 /* Movie.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +158,8 @@
 				C2A6B07B2652B34E0037ADC0 /* Sources */,
 				C2A6B07C2652B34E0037ADC0 /* Frameworks */,
 				C2A6B07D2652B34E0037ADC0 /* Resources */,
+				C2A6B0BE2652BA8B0037ADC0 /* SwiftLint */,
+				C2A6B0C02652BAB90037ADC0 /* SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -272,6 +274,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C2A6B0BE2652BA8B0037ADC0 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		C2A6B0C02652BAB90037ADC0 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C2A6B07B2652B34E0037ADC0 /* Sources */ = {
