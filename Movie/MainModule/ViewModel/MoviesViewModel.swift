@@ -22,28 +22,45 @@ protocol MainViewModelProtocol: NSObjectProtocol {
 }
 
 class MoviesViewModel: NSObject, MainViewModelProtocol {
-    func retrieveDataFromCoreData() {
-        <#code#>
+    weak var delegate: MainViewModelDelegateProtocol?
+    var networkService: NetworkServiceProtocol?
+    var model = MoviesModel(results: [])
+
+    init(
+        networkService: NetworkServiceProtocol
+    ) {
+        self.networkService = networkService
     }
-    
+
     func checkData() {
-        <#code#>
+        loadMoviesData()
     }
-    
+
     func loadMoviesData() {
-        <#code#>
+        networkService?.getMoviesData(.popular) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(movieList):
+                self.model.results = movieList.results
+                self.delegate?.reloadData(sender: self)
+            case let .failure(error):
+                UIAlertController()
+                    .showAlertWith(title: "Couldn't connect", message: "Please check your internet connetction")
+                print("Error processing json data: \(error)")
+            }
+        }
     }
-    
+
     func didSelectMovie(indexPath: IndexPath) {
-        <#code#>
+        let movie = object(indexPath: indexPath)
     }
-    
+
     func numbersOfRowsInSection(section: Int) -> Int {
-        <#code#>
+        model.results.count
     }
-    
+
     func object(indexPath: IndexPath) -> ResultMovie? {
-        <#code#>
+        model.results[indexPath.row]
     }
     
 }
