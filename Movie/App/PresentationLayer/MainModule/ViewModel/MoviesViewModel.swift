@@ -90,7 +90,8 @@ final class MoviesViewModel: NSObject, NSFetchedResultsControllerDelegate, MainV
     }
 
     func didSelectMovie(indexPath: IndexPath) {
-//        let movie = object(indexPath: indexPath)
+        let movie = object(indexPath: indexPath)
+        coordinator?.detailSubscription(movie: movie)
     }
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
