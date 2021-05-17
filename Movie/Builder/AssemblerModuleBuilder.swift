@@ -23,7 +23,6 @@ final class AssemblerModuleBuilder: AssemblerBuilderProtocol {
             coordinator: coordinator,
             photoService: photoServise
         )
-        mainVC.viewModel?.coordinator = coordinator
         mainVC.viewModel?.delegate = mainVC
         return mainVC
     }
