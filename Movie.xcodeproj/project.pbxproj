@@ -29,6 +29,7 @@
 		C2A6B0DA2652DA700037ADC0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0D92652DA700037ADC0 /* MainCoordinator.swift */; };
 		C2A6B0DF2652DEB10037ADC0 /* AssemblerModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0DE2652DEB10037ADC0 /* AssemblerModuleBuilder.swift */; };
 		C2A6B0E42652E1340037ADC0 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0E32652E1340037ADC0 /* PhotoService.swift */; };
+		C2A6B0E92652F01A0037ADC0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0E82652F01A0037ADC0 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		C2A6B0D92652DA700037ADC0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		C2A6B0DE2652DEB10037ADC0 /* AssemblerModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblerModuleBuilder.swift; sourceTree = "<group>"; };
 		C2A6B0E32652E1340037ADC0 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		C2A6B0E82652F01A0037ADC0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				C2A6B0812652B34E0037ADC0 /* Movie */,
-				C2A6B0C42652BE930037ADC0 /* Core */,
-				C2A6B0E02652E0B00037ADC0 /* Environments */,
 				C2A6B09B2652B34F0037ADC0 /* MovieTests */,
 				C2A6B0A62652B34F0037ADC0 /* MovieUITests */,
 				C2A6B0802652B34E0037ADC0 /* Products */,
@@ -129,12 +129,10 @@
 		C2A6B0812652B34E0037ADC0 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
-				C2A6B0D62652D8780037ADC0 /* Coordinator */,
-				C2A6B0E22652E0FA0037ADC0 /* Builder */,
-				C2A6B0C12652BD8B0037ADC0 /* ServiceLayer */,
-				C2A6B0E12652E0C00037ADC0 /* Presentation */,
-				C2A6B08E2652B34F0037ADC0 /* Assets.xcassets */,
-				C2A6B0932652B34F0037ADC0 /* Info.plist */,
+				C2A6B0EA2652F0A00037ADC0 /* App */,
+				C2A6B0EB2652F0D60037ADC0 /* Resources */,
+				C2A6B0C42652BE930037ADC0 /* Core */,
+				C2A6B0E02652E0B00037ADC0 /* Environments */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -236,18 +234,20 @@
 		C2A6B0E02652E0B00037ADC0 /* Environments */ = {
 			isa = PBXGroup;
 			children = (
+				C2A6B0932652B34F0037ADC0 /* Info.plist */,
 				C2A6B0842652B34E0037ADC0 /* SceneDelegate.swift */,
 				C2A6B0822652B34E0037ADC0 /* AppDelegate.swift */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
 		};
-		C2A6B0E12652E0C00037ADC0 /* Presentation */ = {
+		C2A6B0E12652E0C00037ADC0 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
 				C2A6B0D02652CC130037ADC0 /* MainModule */,
+				C2A6B0E52652EFE10037ADC0 /* DetailModule */,
 			);
-			path = Presentation;
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
 		C2A6B0E22652E0FA0037ADC0 /* Builder */ = {
@@ -256,6 +256,49 @@
 				C2A6B0DE2652DEB10037ADC0 /* AssemblerModuleBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		C2A6B0E52652EFE10037ADC0 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				C2A6B0E72652F0060037ADC0 /* ViewModel */,
+				C2A6B0E62652EFFC0037ADC0 /* View */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		C2A6B0E62652EFFC0037ADC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2A6B0E82652F01A0037ADC0 /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2A6B0E72652F0060037ADC0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C2A6B0EA2652F0A00037ADC0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C2A6B0D62652D8780037ADC0 /* Coordinator */,
+				C2A6B0E22652E0FA0037ADC0 /* Builder */,
+				C2A6B0C12652BD8B0037ADC0 /* ServiceLayer */,
+				C2A6B0E12652E0C00037ADC0 /* PresentationLayer */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C2A6B0EB2652F0D60037ADC0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2A6B08E2652B34F0037ADC0 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +481,7 @@
 				C2A6B0C32652BE130037ADC0 /* NetworkService.swift in Sources */,
 				C2A6B0832652B34E0037ADC0 /* AppDelegate.swift in Sources */,
 				C2A6B08D2652B34E0037ADC0 /* Movie.xcdatamodeld in Sources */,
+				C2A6B0E92652F01A0037ADC0 /* DetailViewController.swift in Sources */,
 				C2A6B0852652B34E0037ADC0 /* SceneDelegate.swift in Sources */,
 				C2A6B0D22652CC350037ADC0 /* MoviesViewModel.swift in Sources */,
 				C2A6B0CB2652BF000037ADC0 /* AlertController+Error.swift in Sources */,
@@ -623,7 +667,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFDF95FC8X;
-				INFOPLIST_FILE = Movie/Info.plist;
+				INFOPLIST_FILE = Movie/Environments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,7 +686,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFDF95FC8X;
-				INFOPLIST_FILE = Movie/Info.plist;
+				INFOPLIST_FILE = Movie/Environments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
