@@ -31,6 +31,7 @@
 		C2A6B0E42652E1340037ADC0 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0E32652E1340037ADC0 /* PhotoService.swift */; };
 		C2A6B0E92652F01A0037ADC0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0E82652F01A0037ADC0 /* DetailViewController.swift */; };
 		C2A6B0ED2652F1620037ADC0 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0EC2652F1620037ADC0 /* DetailCollectionViewCell.swift */; };
+		C2A6B0EF2652F2940037ADC0 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0EE2652F2940037ADC0 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		C2A6B0E32652E1340037ADC0 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		C2A6B0E82652F01A0037ADC0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C2A6B0EC2652F1620037ADC0 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2A6B0EE2652F2940037ADC0 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +283,7 @@
 		C2A6B0E72652F0060037ADC0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2A6B0EE2652F2940037ADC0 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				C2A6B0B92652B93B0037ADC0 /* Photo.swift in Sources */,
 				C2A6B0D42652D1E90037ADC0 /* CoreDataService.swift in Sources */,
 				C2A6B0DF2652DEB10037ADC0 /* AssemblerModuleBuilder.swift in Sources */,
+				C2A6B0EF2652F2940037ADC0 /* DetailViewModel.swift in Sources */,
 				C2A6B0872652B34E0037ADC0 /* MainViewController.swift in Sources */,
 				C2A6B0ED2652F1620037ADC0 /* DetailCollectionViewCell.swift in Sources */,
 				C2A6B0C62652BEB30037ADC0 /* Constant.swift in Sources */,

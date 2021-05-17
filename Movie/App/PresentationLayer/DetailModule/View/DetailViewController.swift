@@ -63,4 +63,3 @@ extension DetailViewController: DetailViewModelDelegateProtocol {
         activityIndicator.isHidden = true
     }
 }
-
