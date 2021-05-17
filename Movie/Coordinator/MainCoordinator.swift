@@ -15,7 +15,6 @@ protocol CoordinatorProtocol {
     init(navigationController: UINavigationController, assemblyBuilder: AssemblerBuilderProtocol)
 
     func start()
-    func detailSubscription(movie: ResultMovie?)
 }
 
 ///
@@ -35,12 +34,4 @@ final class MainCoordinator: CoordinatorProtocol {
             navigationController.pushViewController(mainViewController, animated: false)
         }
     }
-
-//    func detailSubscription(movie: ResultMovie?) {
-//        if let navigationController = navigationController {
-//            guard let detailViewController = assemblyBuilder?.createDetailModule(movie: movie, coordinator: self)
-//            else { return }
-//            navigationController.pushViewController(detailViewController, animated: true)
-//        }
-//    }
 }
