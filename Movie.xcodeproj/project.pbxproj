@@ -17,6 +17,7 @@
 		C2A6B09D2652B34F0037ADC0 /* MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B09C2652B34F0037ADC0 /* MovieTests.swift */; };
 		C2A6B0A82652B34F0037ADC0 /* MovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0A72652B34F0037ADC0 /* MovieUITests.swift */; };
 		C2A6B0B62652B67E0037ADC0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0B52652B67E0037ADC0 /* Movie.swift */; };
+		C2A6B0B92652B93B0037ADC0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0B82652B93B0037ADC0 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C2A6B0A72652B34F0037ADC0 /* MovieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieUITests.swift; sourceTree = "<group>"; };
 		C2A6B0A92652B34F0037ADC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2A6B0B52652B67E0037ADC0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C2A6B0B82652B93B0037ADC0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A6B0B52652B67E0037ADC0 /* Movie.swift */,
+				C2A6B0B82652B93B0037ADC0 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A6B0B92652B93B0037ADC0 /* Photo.swift in Sources */,
 				C2A6B0872652B34E0037ADC0 /* ViewController.swift in Sources */,
 				C2A6B0832652B34E0037ADC0 /* AppDelegate.swift in Sources */,
 				C2A6B08D2652B34E0037ADC0 /* Movie.xcdatamodeld in Sources */,
