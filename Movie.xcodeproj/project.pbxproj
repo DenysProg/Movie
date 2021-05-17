@@ -27,6 +27,7 @@
 		C2A6B0D42652D1E90037ADC0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0D32652D1E90037ADC0 /* CoreDataService.swift */; };
 		C2A6B0D82652D8950037ADC0 /* StoryboardedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0D72652D8950037ADC0 /* StoryboardedCoordinator.swift */; };
 		C2A6B0DA2652DA700037ADC0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0D92652DA700037ADC0 /* MainCoordinator.swift */; };
+		C2A6B0DF2652DEB10037ADC0 /* AssemblerModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B0DE2652DEB10037ADC0 /* AssemblerModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C2A6B0D32652D1E90037ADC0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		C2A6B0D72652D8950037ADC0 /* StoryboardedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedCoordinator.swift; sourceTree = "<group>"; };
 		C2A6B0D92652DA700037ADC0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C2A6B0DE2652DEB10037ADC0 /* AssemblerModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblerModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				C2A6B0D02652CC130037ADC0 /* MainModule */,
 				C2A6B08E2652B34F0037ADC0 /* Assets.xcassets */,
 				C2A6B0932652B34F0037ADC0 /* Info.plist */,
+				C2A6B0DE2652DEB10037ADC0 /* AssemblerModuleBuilder.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			files = (
 				C2A6B0B92652B93B0037ADC0 /* Photo.swift in Sources */,
 				C2A6B0D42652D1E90037ADC0 /* CoreDataService.swift in Sources */,
+				C2A6B0DF2652DEB10037ADC0 /* AssemblerModuleBuilder.swift in Sources */,
 				C2A6B0872652B34E0037ADC0 /* MainViewController.swift in Sources */,
 				C2A6B0C62652BEB30037ADC0 /* Constant.swift in Sources */,
 				C2A6B0D82652D8950037ADC0 /* StoryboardedCoordinator.swift in Sources */,
