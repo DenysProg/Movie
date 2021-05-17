@@ -21,6 +21,22 @@ final class CoreData: CoreDataProtocol {
     private let container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     private let fetchRequest = NSFetchRequest<MovieEntity>(entityName: "MovieEntity")
 
+    func saveDataOf(movie: [ResultMovie]) {
+        container?.performBackgroundTask { [weak self] context in
+            self?.deleteObjectsfromCoreData(context: context)
+            self?.saveDataToCoreData(movies: movie, context: context)
+        }
+    }
+
+    func deleteObjectsfromCoreData(context: NSManagedObjectContext) {
+        do {
+            let objects = try context.fetch(fetchRequest)
+            _ = objects.map { context.delete($0) }
+            try context.save()
+        } catch {
+            print("Deleting Error: \(error)")
+        }
+    }
 
     func saveDataToCoreData(movies: [ResultMovie], context: NSManagedObjectContext) {
         context.perform {
