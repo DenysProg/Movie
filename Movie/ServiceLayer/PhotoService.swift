@@ -15,7 +15,6 @@ protocol PhotoServiceProtocol {
 }
 
 final class PhotoService: PhotoServiceProtocol {
-    
     private var images = [String: UIImage]()
     private let cacheLifeTime: TimeInterval = 60 * 60 * 24 * 7
 
@@ -33,7 +32,7 @@ final class PhotoService: PhotoServiceProtocol {
         }
         return pathName
     }()
-    
+
     private func getFilePath(urlString: String) -> String? {
         guard let cacheDir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
         else { return nil }
@@ -62,7 +61,7 @@ final class PhotoService: PhotoServiceProtocol {
 
         return image
     }
-    
+
     func loadPhoto(by urlString: String, completion: @escaping (UIImage?) -> ()) {
         let url = imageUrlConstant + urlString
         print(url)
@@ -102,5 +101,4 @@ final class PhotoService: PhotoServiceProtocol {
             }
         }
     }
-    
 }

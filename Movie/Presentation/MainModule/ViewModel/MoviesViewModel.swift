@@ -41,7 +41,36 @@ final class MoviesViewModel: NSObject, NSFetchedResultsControllerDelegate, MainV
         self.photoService = photoService
     }
 
+    func retrieveDataFromCoreData() {
+        if let context = container?.viewContext {
+            let request: NSFetchRequest<MovieEntity> = MovieEntity.fetchRequest()
+
+            request.sortDescriptors = [NSSortDescriptor(key: #keyPath(MovieEntity.rate), ascending: false)]
+            let data = try? context.fetch(request)
+            let result = data?.compactMap { movie -> ResultMovie in
+                let movieEntity = ResultMovie(movie: movie)
+                return movieEntity
+            }
+            model.results = result ?? []
+            delegate?.reloadData(sender: self)
+        }
+    }
+
+    func getImage(path: String, completion: @escaping (UIImage) -> ()) {
+        photoService?.photo(by: path, completion: { image in
+            DispatchQueue.main.async {
+                if let image = image {
+                    completion(image)
+                } else {
+                    let image = UIImage(systemName: "xmark")
+                    completion(image ?? UIImage())
+                }
+            }
+        })
+    }
+
     func checkData() {
+        retrieveDataFromCoreData()
         loadMoviesData()
     }
 
@@ -61,7 +90,11 @@ final class MoviesViewModel: NSObject, NSFetchedResultsControllerDelegate, MainV
     }
 
     func didSelectMovie(indexPath: IndexPath) {
-        let movie = object(indexPath: indexPath)
+//        let movie = object(indexPath: indexPath)
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        delegate?.reloadData(sender: self)
     }
 
     func numbersOfRowsInSection(section: Int) -> Int {
@@ -71,5 +104,4 @@ final class MoviesViewModel: NSObject, NSFetchedResultsControllerDelegate, MainV
     func object(indexPath: IndexPath) -> ResultMovie? {
         model.results[indexPath.row]
     }
-    
 }

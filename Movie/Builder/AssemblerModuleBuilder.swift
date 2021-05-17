@@ -11,21 +11,20 @@ import UIKit
 ///
 protocol AssemblerBuilderProtocol {
     func createMainModule(coordinator: CoordinatorProtocol) -> UIViewController
-
 }
 
 final class AssemblerModuleBuilder: AssemblerBuilderProtocol {
     func createMainModule(coordinator: CoordinatorProtocol) -> UIViewController {
         let networkService = NetworkService()
         let photoServise = PhotoService()
-        let vc = MainViewController.instantiate()
-        vc.viewModel = MoviesViewModel(
+        let mainVC = MainViewController.instantiate()
+        mainVC.viewModel = MoviesViewModel(
             networkService: networkService,
             coordinator: coordinator,
             photoService: photoServise
         )
-        vc.viewModel?.coordinator = coordinator
-        vc.viewModel?.delegate = vc
-        return vc
+        mainVC.viewModel?.coordinator = coordinator
+        mainVC.viewModel?.delegate = mainVC
+        return mainVC
     }
 }
