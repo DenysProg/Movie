@@ -18,7 +18,7 @@ final class MockNavigationController: UINavigationController {
     }
 }
 
-///
+///Mark
 final class CoordinatorTest: XCTestCase {
     var coordinator: MainCoordinator!
     var navigationController = MockNavigationController()
